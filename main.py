@@ -39,7 +39,7 @@ class HashTable:
             while current:
                 yield current.value
                 current = current.next
-    def __iter__(self):  # ✅ Add this method
+    def __iter__(self):  
         return self.values()
 
 # Load Excel file
@@ -52,21 +52,27 @@ results = []
 
 # Process each column
 for col in df.columns:
-    if df[col].dropna().empty:
+    if df[col].dropna().empty or len(df[col].dropna()) == 2:
         continue
+    first_value = df[col].dropna().iloc[0]
+    col_name = str(first_value)
+    
+
     table = HashTable()
     for index, value in df[col].items():
         if pd.notna(value) and is_number(value):  # Skip NaN
             table.insert(index, value)
     if table.size == 0:
         continue
-    hash_tables[col] = table
-    globals()[col] = table  # Create variable with column name
-    print(f"\n=== Rezultāti kolonnai: {col} ===")
+    hash_tables[col_name] = table
+    globals()[col_name] = table  # Create variable with column name
+    print(f"\n=== Rezultāti kolonnai: {col_name} ===")
     count = table.size
     values_list = list(table.values())
+
+    #videjais
     videjais = sum(values_list)/count
-    print(f"videjais: {videjais}")
+    print(f"videjais: {round(videjais,5)}")
 
 
     #kvadrātiskais vidējais
@@ -110,7 +116,7 @@ for col in df.columns:
         relativa_kluda = (galiga_absoluta_kluda/videjais)*100
         print(f"relativa kluda: {round(relativa_kluda,5)} %")
         results.append({
-        "Kolonna": col,
+        "Kolonna": col_name,
         "Vidējais": round(videjais, 5),
         "Kvadrātiskais vidējais": round(kvadratiskais_videjais, 5),
         "Absolūtā kļūda": round(absoluta_kluda, 5),
