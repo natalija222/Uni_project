@@ -43,7 +43,7 @@ class HashTable:
         return self.values()
 
 # Load Excel file
-excel_file = "piemers.xlsx"
+excel_file = "piemers3.xlsx"
 df = pd.read_excel(excel_file)
 
 # Dictionary to hold HashTables per column
@@ -52,7 +52,7 @@ results = []
 
 # Process each column
 for col in df.columns:
-    if df[col].dropna().empty or len(df[col].dropna()) == 2:
+    if df[col].dropna().empty or len(df[col].dropna()) <= 2:
         continue
     first_value = df[col].dropna().iloc[0]
     col_name = str(first_value)
@@ -115,6 +115,8 @@ for col in df.columns:
         #relatīvā kļūda
         relativa_kluda = (galiga_absoluta_kluda/videjais)*100
         print(f"relativa kluda: {round(relativa_kluda,5)} %")
+        
+        #ieraksta datus jaunā failā
         results.append({
         "Kolonna": col_name,
         "Vidējais": round(videjais, 5),

@@ -14,7 +14,7 @@ Darbam tika izvēlēta tieši pandas bibliotēka, jo kā redzams programmā nepi
 ### **HashTabulas lietojums programmā**
 HashTabula jeb jaucējtabula ir datu struktūra, kas glabā datus "atslēgu" un "vērtību" pāros, kur atslēga glabā adresi uz vērtību. Izmantojot šo datu struktūru var ātri piekļūt un veikt manipulācijas ar datiem. Mūsu veidotās programmas kontekstā HashTable tiek izmantota, lai
 - katru excel faila kolonnu saglabātu savā hashtabulā, jo tālāk programmā nepieciešams veikt darbības ar katru kollonnu atsevišķi;
-- Katra pārbaudītā derīgā vērtība tiek saglabāta hashtabulā, kolonnas numurs tiek saglabāts kā "atslēga" un šūnas vērtība kā "vērtība";
+- Kollonnas vērtības tiek pārbaudītas ar funkcijas dropna() palīdzību un derīgās skaitliskās vērtības tiek saglabātas hashTabulā;
 - Katra hashTabula tiek saglabāta vārdnīcā, kur kā "atslēga" šoreiz tiek saglabāts kollonas nosaukums. Tas tiek izmantots vēlāk programmā;
 - Vēlāk hastabulā sglabātās vērtības tiek izmantotas aprēķinos;
 - Tā kā ir nepieciešams apstrādāt katru kolonnu atsevišķi, programmā nepieciešams for cikls, tādēļ implementējot hashtabulu, tajā tiek implementēta funkcija _iter_, kas atļauj tieši veikt iterācijas for ciklā, sglabājot katrā ciklā iegūtās vērtības.
