@@ -1,6 +1,6 @@
 # Tiešo mērījumu kļūdu aprēķina automatizācija
 ## Programmas aktualitāte.
-Universitātē veicot fizikas laboratorijas darbus, katrā darbā ir nepieciešams veikt tiešo mērījumu matemātisko apstrādi jeb kļūdu aprēķinu. Šis kļūdu aprēkins sastāv no vairākām formulām un parasti aizņem daudz laika. Ja izmanto Exceli to iespējams paveikt aptuveni stundas laikā un studentu aizņemtajā ikdienā stunda ir ilgs laiks, tādēļ mēs izstrādājām šo programmu, kas kļūdu aprēķinu laiku samazina no stundas līdz dažām minūtēm.
+Universitātē veicot fizikas laboratorijas darbus, katrā darbā ir nepieciešams veikt tiešo mērījumu matemātisko apstrādi jeb kļūdu aprēķinu. Šis kļūdu aprēķins sastāv no vairākām formulām un parasti aizņem daudz laika. Ja izmanto Exceli to iespējams paveikt aptuveni stundas laikā un studentu aizņemtajā ikdienā stunda ir ilgs laiks, tādēļ mēs izstrādājām šo programmu, kas kļūdu aprēķinu laiku samazina no stundas līdz dažām minūtēm.
 ## Programmas darbības pamatprincipi un tajā izmantotās biblioptēkas un datu struktūras
 Programmas darbības pamatā ir excel faila apstrāde izmatojot pandas bibliotēku. Kad excel fails ir nolasīts rezultāti tiek saglabāti HashTabulā un tiek veikta to matemātiskā apstrāde izmantojot Python bibliotēku math. Pēc Matemātiskās apstrādes veikšanas rezultāti tiek saglabāti jaunā excel failā.
 ### **Pandas bibliotēkas lietojums programmā**
